@@ -1,13 +1,25 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
+# Created by https://www.gitignore.io/api/laravel
+
+### Laravel ###
 /vendor
-/.idea
-/.vscode
-/.vagrant
-Homestead.json
-Homestead.yaml
+node_modules/
 npm-debug.log
-yarn-error.log
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+storage/
+storage/*.key
+.env.*.php
+.env.php
 .env
+Homestead.yaml
+Homestead.json
+# Config
+config/app.php
+config/database.php
+
+# Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
+.rocketeer/
+
+
+# End of https://www.gitignore.io/api/laravel
