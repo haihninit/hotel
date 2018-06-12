@@ -1,0 +1,28 @@
+.nav-logo
+{
+    font-family: 'Bungee Inline', cursive;
+    font-weight: 700;
+}
+@media (min-width: 768px) {
+    .nav-logo
+    {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+.bg-red-common
+{
+    background: rgb(204,0,0) !important;
+    color: rgb(255,255,255) !important;
+}
+.content-body
+{
+    margin-top: 80px ;
+}
