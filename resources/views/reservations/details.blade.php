@@ -3,25 +3,33 @@
 @section('cssCustom')
 @endsection
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h3>Đơn đặt phòng của khách hàng <b style="text-transform: uppercase;">{{$guest[0]['first_name']}} {{$guest[0]['last_name']}}</b></h3>
-            </div>
-        </div>
-        <div class="row">
-            @foreach($result as $key=>$item)
-            <div class="col-sm-6 col-md-4">
-                <div class="card">
-                    <div class="card-header"> #{{$key+1}}</div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Nhận phòng: {{$item['check_in']}}</li>
-                            <li class="list-group-item">Trả phòng: {{$item['check_out']}}</li>
-                        </ul>
-                    <div class="card-footer"><a href="#">Xem chi tiết</a></div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Phòng</th>
+            <th scope="col">Loại</th>
+            <th scope="col">Sức chứa</th>
+            <th scope="col">Giá</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($result as $key=>$item)
+        <tr>
+            <th scope="row">{{$key+1}}</th>
+            <td>{{$item['number']}}</td>
+            <td>{{($item['description'])=="DOUBLE"?"PHÒNG ĐÔI":"PHÒNG ĐƠN"}}</td>
+            <td>{{$item['max_capacity']}}</td>
+            <td>{{number_format($item['price'])}}</td>
+        </tr>
+        @endforeach
+        </tbody>
+    </table>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Thời gian nhận phòng: <b>{{pt_datetime($item['check_in'])}}</b></li>
+            <li class="list-group-item">Thời gian trả phòng: <b>{{pt_datetime($item['check_out'])}}</b></li>
+            <li class="list-group-item">Tổng tiền: <b>{{number_format($item['total'])}}</b></li>
+            <li class="list-group-item">Đã cọc: <b>{{number_format($item['deposit'])}}</b></li>
+            <li class="list-group-item">Phụ thu: <b>{{($item['surcharge']==0)?"Không phụ thu":number_format($item['surcharge'])}}</b></li>
+        </ul>
 @endsection

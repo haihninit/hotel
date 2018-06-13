@@ -3,7 +3,20 @@
     font-family: 'Bungee Inline', cursive;
     font-weight: 700;
 }
+.content-body
+{
+    margin-top: 80px ;
+}
+@media (max-width: 768px) {
+    .content-body {
+        margin-top: 56px;
+        font-size: .7em;
+    }
+}
 @media (min-width: 768px) {
+    .content-body {
+        margin-top: 80px;
+    }
     .nav-logo
     {
         font-size: 2rem;
@@ -22,7 +35,4 @@
     background: rgb(204,0,0) !important;
     color: rgb(255,255,255) !important;
 }
-.content-body
-{
-    margin-top: 80px ;
-}
+

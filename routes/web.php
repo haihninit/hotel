@@ -13,4 +13,5 @@
 
 Route::get('/', 'HomeController@index');
 Route::post('/search','GuestController@search');
-Route::get('/reservation/{id}','ReservationController@reservationDetails');
+Route::get('/reservation/{id}','ReservationController@reservationOrders');
+Route::get('/reservation/details/{id}','ReservationController@reservationDetails');
