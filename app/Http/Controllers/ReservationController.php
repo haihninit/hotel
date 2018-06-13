@@ -9,21 +9,11 @@
 namespace App\Http\Controllers;
 
 
-use App\Reservation;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 
 class ReservationController extends BaseController
 {
-    public function search(Request $request)
-    {
-        $input = $request->get('phone');
-        $guest = DB::table('guests')
-            ->where('phone','=',$input)
-            ->get();
-        return response()->json($guest);
-    }
     public function reservationDetails($id)
     {
         $result = DB::table('reserved_room')
@@ -32,6 +22,10 @@ class ReservationController extends BaseController
             ->where('guests.id','=',$id)
             ->select('guest_id','reservation_id','check_in','check_out')
             ->get();
-        return view('reservations.details')->with('result',json_decode($result,true));
+        $guest = DB::table('guests')
+            ->where('id','=',$id)
+            ->get();
+        return view('reservations.details')->with('result',json_decode($result,true))
+            ->with('guest',json_decode($guest,true));
     }
 }

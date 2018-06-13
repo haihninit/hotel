@@ -32,26 +32,16 @@
                        $.each(data,function (i,l) {
                            t += '<div class="card" style="margin: 10px 0">' +
                                '                        <div class="card-header">' +
-                               '                            <a data-toggle="collapse" data-parent="#accordion" href="#card'+i+'" style="float: left">' +
+                               '                             <a href="{{url('/')}}/reservation/'+l['id']+'" style="float: left">' +
                                l['first_name'] +' '+  l['last_name'] +
                                '                            </a>' +
-                               '                        </div>' +
-                               '                        <div id="card'+i+'" class="collapse" style="color: #000">' +
-                               '                            <div class="card-body" style="text-align: left">' +
-                               '                                <ul class="list-group list-group-flush">' +
-                               '                                    <li class="list-group-item">Số điện thoại: '+l['phone']+'</li>' +
-                               '                                </ul>' +
-                               '                            </div>' +
-                               '                            <div class="card-footer">' +
-                               '                                <a href="{{url('/')}}/reservation/'+l['id']+'"> Xem chi tiết</a>' +
-                               '                            </div>' +
                                '                        </div>' +
                                '                    </div>';
                        });
                        if(t==='')
                        {
                            $("#result-content").fadeIn();
-                           $("p#error").css('display','block').html('Không tìm thấy số điện thoại '+$('input#search').val());
+                           $("p#error").css('display','block').html('Không tìm thấy số điện thoại <b>'+$('input#search').val())+'</b>';
                            $("#result-card").hide();
                        }
                        else
