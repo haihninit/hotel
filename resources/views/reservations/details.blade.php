@@ -4,18 +4,45 @@
 @endsection
 @section('content')
     <div class="container">
-        <div class="card" style="margin-top: 100px">
-            <div class="card-header">
-                {{$result[0]['customer_name']}}
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-3 col-6">Số điện thoại</div>
-                    <div class="col-sm-3 col-6">{{$result[0]['customer_phone']}}</div>
+        <div class="row">
+            <div class="col">
+                <div class="card" style="margin-top: 100px">
+                    <div class="card-header">ANCNAC
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Số điện thoại: {{$result[0]['guest_id']}}</li>
+                            <li class="list-group-item">Số điện thoại: {{$result[0]['guest_id']}}</li>
+                        </ul>
                 </div>
-                <div class="row">
-                    <div class="col-sm-3 col-6"></div>
-                    <div class="col-sm-3 col-6">{{$result[0]['customer_phone']}}</div>
+            </div>
+            <div class="col">
+                <div class="card" style="margin-top: 100px">
+                    <div class="card-header">ANCNAC
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Số điện thoại: {{$result[0]['guest_id']}}</li>
+                        <li class="list-group-item">Số điện thoại: {{$result[0]['guest_id']}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="margin-top: 100px">
+                    <div class="card-header">ANCNAC
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Số điện thoại: {{$result[0]['guest_id']}}</li>
+                        <li class="list-group-item">Số điện thoại: {{$result[0]['guest_id']}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="margin-top: 100px">
+                    <div class="card-header">ANCNAC
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Số điện thoại: {{$result[0]['guest_id']}}</li>
+                        <li class="list-group-item">Số điện thoại: {{$result[0]['guest_id']}}</li>
+                    </ul>
                 </div>
             </div>
         </div>

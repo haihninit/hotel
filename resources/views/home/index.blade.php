@@ -33,15 +33,13 @@
                            t += '<div class="card" style="margin: 10px 0">' +
                                '                        <div class="card-header">' +
                                '                            <a data-toggle="collapse" data-parent="#accordion" href="#card'+i+'" style="float: left">' +
-                               l['customer_name'] +
+                               l['first_name'] +' '+  l['last_name'] +
                                '                            </a>' +
                                '                        </div>' +
                                '                        <div id="card'+i+'" class="collapse" style="color: #000">' +
                                '                            <div class="card-body" style="text-align: left">' +
                                '                                <ul class="list-group list-group-flush">' +
-                               '                                    <li class="list-group-item">Số điện thoại: '+l['customer_phone']+'</li>' +
-                               '                                    <li class="list-group-item">Ngày đặt: '+l['created_at']+'</li>' +
-                               '                                    <li class="list-group-item">Số điện thoại: 01636861069</li>' +
+                               '                                    <li class="list-group-item">Số điện thoại: '+l['phone']+'</li>' +
                                '                                </ul>' +
                                '                            </div>' +
                                '                            <div class="card-footer">' +
