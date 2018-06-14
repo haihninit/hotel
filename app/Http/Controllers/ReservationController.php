@@ -39,4 +39,13 @@ class ReservationController extends BaseController
             ->get();
             return view('reservations.details')->with('result',json_decode($result,true));
     }
+    public function reservationList()
+    {
+        $result = DB::table('reservation')->get();
+    }
+    public  function createReservation()
+    {
+        return view('reservations.add');
+    }
+
 }

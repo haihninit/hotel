@@ -9,7 +9,7 @@
             <th scope="col">#</th>
             <th scope="col">Phòng</th>
             <th scope="col">Loại</th>
-            <th scope="col">Sức chứa</th>
+            <th scope="col">Số người</th>
             <th scope="col">Giá</th>
         </tr>
         </thead>

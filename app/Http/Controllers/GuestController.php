@@ -9,7 +9,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Guest;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -23,4 +25,12 @@ class GuestController extends BaseController
             ->get();
         return response()->json($guest);
     }
+    public function store(Request $request)
+    {
+            $guest = new Guest;
+            $guest->name = $request->get('name');
+            $guest->phone = $request->get('phone');
+            $guest->save();
+    }
+
 }

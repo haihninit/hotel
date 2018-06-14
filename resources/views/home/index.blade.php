@@ -5,8 +5,18 @@
 @section('jsCustom')
     <script>
         jQuery(document).ready(function(){
+            $('input#search').on("keypress", function(e) {
+                if (e.keyCode == 13) {
+                    $('button#search').click();
+                }
+            });
             jQuery('button#search').click(function(e){
                 e.preventDefault();
+                if($('input#search').val()=='')
+                {
+                    alert('Vui lòng nhập số điện thoại');
+                    return false;
+                }
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -27,13 +37,12 @@
                         phone: jQuery('input#search').val()
                     },
                     success: function(data){
-                        console.log(data);
                         var t ='';
                        $.each(data,function (i,l) {
                            t += '<div class="card" style="margin: 10px 0">' +
                                '                        <div class="card-header">' +
                                '                             <a href="{{url('/')}}/reservation/'+l['id']+'" style="float: left">' +
-                               l['first_name'] +' '+  l['last_name'] +
+                               l['name']+
                                '                            </a>' +
                                '                        </div>' +
                                '                    </div>';
@@ -71,7 +80,6 @@
                     <h2 class="mb-5">Nhập số điện thoại để kiểm tra đặt phòng</h2>
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                    <form>
                         <div class="form-row">
                             <div class="col-12 col-md-9 mb-2 mb-md-0">
                                 <input type="text" name="phone" class="form-control form-control-lg" id="search" placeholder="0123456789">
@@ -80,7 +88,6 @@
                                 <button type="button" class="btn btn-block btn-lg bg-red-common" id="search"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                         </div>
-                    </form>
                     <div id="result-content" style="display: none;margin-top: 15px">
                     <h5>Kết quả tìm kiếm</h5>
                         <p id="error" style="display: none"></p>
